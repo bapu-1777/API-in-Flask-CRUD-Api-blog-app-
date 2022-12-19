@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "d887048e-de5b-4695-99d9-ed4d6b5038ac",
+		"name": "Blog_flask_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24099354"
+	},
+	"item": [
+		{
+			"name": "R-read",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/read/byname/xyz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/read/byname/xyz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"read",
+								"byname",
+								"xyz"
+							]
+						},
+						"description": "To read blog using author name"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/read/bycolumn",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"column\":[\"titel\", \"author\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/read/bycolumn",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"read",
+								"bycolumn"
+							]
+						},
+						"description": "read data using column"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/read/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/read/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"read",
+								"all"
+							]
+						},
+						"description": "To read all data from SQL(table)"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/read/byid/4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/read/byid/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"read",
+								"byid",
+								"4"
+							]
+						},
+						"description": "To read blog by id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/read/page/2/limit/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/read/page/2/limit/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"read",
+								"page",
+								"2",
+								"limit",
+								"2"
+							]
+						},
+						"description": "read blog in form of pages..."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "C-create",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/add/imagebyid/4",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/mayan/Downloads/blog_image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/add/imagebyid/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add",
+								"imagebyid",
+								"4"
+							]
+						},
+						"description": "to add image in blog bt id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/add/usingcsv",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csv",
+									"type": "file",
+									"src": "/C:/Users/mayan/Downloads/blog_data.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/add/usingcsv",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add",
+								"usingcsv"
+							]
+						},
+						"description": "add multiples data using csv file"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/create/one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"titel\":\"abc\",\r\n   \"description\":\"xyz\",\r\n   \"author\":\"xyz\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/create/one",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create",
+								"one"
+							]
+						},
+						"description": "To add data in SQL data base according to your requirement.\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "U-update",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/update/byid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"titel\":\"abc\",\r\n   \"description\":\"xyz\",\r\n   \"id\":\"3\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/update/byid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"update",
+								"byid"
+							]
+						},
+						"description": "To update blog by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "D-delete",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/delete/byid/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete/byid/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete",
+								"byid",
+								"1"
+							]
+						},
+						"description": "To delete data using id in SQL data-base."
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/delete/byname/xyz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete/byname/xyz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete",
+								"byname",
+								"xyz"
+							]
+						},
+						"description": "delete blog bu author name"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/delete/all",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete",
+								"all"
+							]
+						},
+						"description": "To delete everythings.."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
